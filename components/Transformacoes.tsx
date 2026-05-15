@@ -118,7 +118,7 @@ export default function Transformacoes() {
           >
             {display.map((src, i) => (
               <figure key={i} className="group relative aspect-[3/4] w-[60vw] sm:w-[320px] md:w-[360px] lg:w-[400px] shrink-0 overflow-hidden rounded-2xl glass-dark mr-4 md:mr-6">
-                <Image src={src} alt={`Resultado ${(i % total) + 1}`} fill sizes="(max-width:640px) 60vw,(max-width:1024px) 320px,400px" className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
+                <Image src={src} alt={`Resultado ${(i % total) + 1}`} fill quality={75} loading="lazy" sizes="(max-width:640px) 60vw,(max-width:1024px) 320px,400px" className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" />
                 <div className="absolute inset-0 ring-1 ring-inset ring-white/10 pointer-events-none rounded-2xl" />
                 <div className="absolute inset-0 bg-gradient-to-t from-flosser-black/40 via-transparent to-transparent" />
               </figure>

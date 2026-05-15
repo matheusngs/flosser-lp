@@ -145,7 +145,7 @@ export default function Servicos() {
             {display.map((s, i) => (
               <article key={i} className="glass-light-strong shrink-0 w-[85vw] sm:w-[400px] lg:w-[440px] rounded-2xl p-8 md:p-10 hover:shadow-[0_12px_48px_-12px_rgba(126,148,112,0.35)] transition-shadow duration-500 flex flex-col relative overflow-hidden group mr-6">
                 <div className="relative w-full h-48 mb-6 rounded-2xl overflow-hidden">
-                  <Image src={s.imagem} alt={s.titulo} fill sizes="(max-width:640px) 85vw,400px" className="object-cover group-hover:scale-105 transition-transform duration-500" style={{ objectPosition: s.objectPosition || "center" }} />
+                  <Image src={s.imagem} alt={s.titulo} fill quality={75} loading="lazy" sizes="(max-width:640px) 85vw,400px" className="object-cover group-hover:scale-105 transition-transform duration-500" style={{ objectPosition: s.objectPosition || "center" }} />
                 </div>
 
                 <h3 className="font-sans text-2xl md:text-3xl font-light text-flosser-ink leading-tight tracking-tight mb-5">{s.titulo}</h3>

@@ -35,12 +35,14 @@ export default function Hero() {
           alt="Fachada da clínica Flosser Odontologia Digital em Manaus"
           fill
           priority
+          quality={80}
           sizes="100vw"
-          className="object-cover"
+          className="object-cover object-[75%_center] lg:object-center"
         />
-        {/* Overlay preto → verde (direcionamento PDF), translúcido para preservar a foto */}
-        {/* Lado direito mais escuro pra dar contraste no texto; lado esquerdo limpo pra manter a logo da fachada legível */}
-        <div className="absolute inset-0 bg-gradient-to-l from-flosser-black/85 via-flosser-black/45 to-transparent" />
+        {/* Mobile: overlay escuro global + escurecimento extra na zona do texto pra esconder o logo da parede */}
+        <div className="absolute inset-0 bg-flosser-black/70 lg:hidden" />
+        {/* Desktop: gradient lateral (texto à direita sobre escuro, foto/logo limpa à esquerda) */}
+        <div className="hidden lg:block absolute inset-0 bg-gradient-to-l from-flosser-black/85 via-flosser-black/45 to-transparent" />
         <div className="absolute inset-0 bg-gradient-to-b from-flosser-black/10 via-transparent to-flosser-black/55" />
         {/* Toque de verde (PDF) sem mascarar a foto */}
         <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-transparent to-flosser-sage-soft/25" />
@@ -48,7 +50,7 @@ export default function Hero() {
         <div className="absolute -top-32 -right-32 w-[700px] h-[700px] bg-orb-sage opacity-55 pointer-events-none" />
       </div>
 
-      <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 w-full pt-28 pb-16">
+      <div className="relative z-10 max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-10 w-full pt-24 pb-20 lg:pt-28 lg:pb-16">
         <div className="grid lg:grid-cols-12 gap-8 items-center">
           {/* Texto agora à direita (PDF) */}
           <div className="lg:col-span-7 lg:col-start-6 xl:col-span-6 xl:col-start-7">
@@ -67,7 +69,7 @@ export default function Hero() {
               </div>
 
               {/* Reduzido para caber em 3 linhas (PDF) */}
-              <h1 className="font-sans text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4rem] font-light text-flosser-text leading-[1.05] tracking-tight">
+              <h1 className="font-sans text-[2rem] sm:text-4xl md:text-5xl lg:text-[3.5rem] xl:text-[4rem] font-light text-flosser-text leading-[1.1] lg:leading-[1.05] tracking-tight">
                 Seu novo sorriso começa com{" "}
                 <span className="italic text-flosser-sage font-normal">
                   saúde bucal
